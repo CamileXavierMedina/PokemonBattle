@@ -30,22 +30,22 @@ Listagem de partidas anteriores realizadas pelo usuário e tabela de ranqueament
 
 ## 3. Tecnologias Utilizadas
 
-| Categoria      | Tecnologia                        |
-| -------------- | --------------------------------- |
-| Back-end       | Python 3.11 + Flask               |
-| Consumo de API | Requests (integração com PokeAPI) |
-| Banco de Dados | PostgreSQL (Supabase Cloud)       |
-| Frontend       | HTML5, CSS3 e Bootstrap 5         |
-| Testes         | Pytest                            |
-| DevOps         | Docker e GitHub Actions           |
-| Hospedagem     | Render Cloud                      |
+| Categoria                  | Tecnologia                                 |
+| -------------------------- | ------------------------------------------ |
+| Back-end                   | Python 3.11 + Flask                        |
+| Consumo de API             | Requests (integração direta com a PokeAPI) |
+| Banco de Dados             | PostgreSQL (Supabase Cloud)                |
+| Frontend                   | HTML5, CSS3 e Bootstrap 5                  |
+| Garantia de Qualidade (QA) | Pytest                                     |
+| DevOps e Infraestrutura    | Docker e GitHub Actions                    |
+| Hospedagem                 | Render Cloud                               |
 
 ---
 
 ## 4. Estrutura de Pastas do Projeto
 
 ```text
-/universitariotask-pokemon
+/PokemonBattle
 │
 ├── /static                  # Arquivos estáticos servidos diretamente
 │   ├── /css
@@ -75,53 +75,55 @@ Listagem de partidas anteriores realizadas pelo usuário e tabela de ranqueament
 ### Pré-requisitos
 
 * Python 3.11 ou superior instalado
-* Git instalado
+* Git para controle de versão
 
-### 1. Clone o repositório
+### Configuração do Ambiente
 
-```bash
-git clone https://github.com/CamileXavierMedina/UniversitarioTask.git
-```
-
-### 2. Acesse a pasta do projeto
+#### Clone este repositório para o seu computador
 
 ```bash
-cd UniversitarioTask
+git clone https://github.com/CamileXavierMedina/PokemonBattle.git
 ```
 
-### 3. Crie um ambiente virtual
+#### Navegue até a pasta raiz do projeto
+
+```bash
+cd PokemonBattle
+```
+
+#### Crie um ambiente virtual isolado para as dependências
 
 ```bash
 python -m venv venv
 ```
 
-### 4. Ative o ambiente virtual
+#### Ative o ambiente virtual
 
-#### Windows
+**Windows**
 
 ```bash
 .\venv\Scripts\activate
 ```
 
-#### Linux/macOS
+**Linux/macOS**
 
 ```bash
 source venv/bin/activate
 ```
 
-### 5. Instale as dependências
+#### Instale todas as dependências do projeto
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 6. Execute o servidor
+#### Inicie o servidor local de desenvolvimento
 
 ```bash
 python app.py
 ```
 
-Após iniciar, acesse:
+O console indicará que o servidor está rodando. Abra o navegador e acesse:
 
 ```text
 http://127.0.0.1:5000
@@ -131,19 +133,21 @@ http://127.0.0.1:5000
 
 ## 6. Execução via Docker (Containerização)
 
-### Construir a imagem Docker
+Caso queira compilar e executar a aplicação em um ambiente isolado idêntico ao servidor de produção, certifique-se de ter o Docker instalado.
+
+### Compilação da imagem Docker
 
 ```bash
 docker build -t pokemon-autobattler .
 ```
 
-### Executar o container
+### Execução do container
 
 ```bash
 docker run -p 10000:10000 pokemon-autobattler
 ```
 
-Acesse:
+Acesse no navegador:
 
 ```text
 http://localhost:10000
@@ -155,11 +159,11 @@ http://localhost:10000
 
 ### Repositório GitHub
 
-* https://github.com/CamileXavierMedina/UniversitarioTask
+https://github.com/CamileXavierMedina/PokemonBattle
 
 ### Aplicação Publicada (Deploy)
 
-* Inserir aqui o link do Render após o deploy
+> Inserir aqui o link do Render após o deploy
 
 ---
 
@@ -174,6 +178,6 @@ http://localhost:10000
 
 ---
 
-## Licença
+##  Licença
 
 Este projeto foi desenvolvido para fins acadêmicos e de aprendizado.
