@@ -181,3 +181,5 @@ https://github.com/CamileXavierMedina/PokemonBattle
 ##  Licença
 
 Este projeto foi desenvolvido para fins acadêmicos e de aprendizado.
+
+Ceub - 14 de junho de 2026.
