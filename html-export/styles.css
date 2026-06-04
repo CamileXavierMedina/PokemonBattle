@@ -1,0 +1,1261 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Courier+Prime:wght@400;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arimo', sans-serif;
+  background-color: #0c192c;
+  color: white;
+  min-height: 100vh;
+}
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.top-app-bar {
+  background-color: #0f2744;
+  width: 100%;
+  border-bottom: 2px solid white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.top-app-bar h1 {
+  font-family: 'Courier Prime', monospace;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f1c40f;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.top-app-bar-icons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.icon-button {
+  color: #f1c40f;
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.icon-button:hover {
+  background-color: #f1c40f;
+  color: black;
+}
+
+/* Main Layout */
+.main-layout {
+  display: flex;
+  flex: 1;
+}
+
+/* Sidebar */
+.side-nav-bar {
+  display: none;
+  flex-direction: column;
+  width: 16rem;
+  flex-shrink: 0;
+  border-right: 2px solid white;
+  background-color: #1e3a5f;
+  padding: 2rem 0;
+  gap: 1rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+@media (min-width: 768px) {
+  .side-nav-bar {
+    display: flex;
+  }
+}
+
+.trainer-info {
+  padding: 0 2rem;
+  margin-bottom: 1rem;
+}
+
+.trainer-info h2 {
+  font-family: 'Courier Prime', monospace;
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #f1c40f;
+}
+
+.trainer-info p {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #bfecff;
+  margin-top: 0.25rem;
+  text-transform: uppercase;
+}
+
+.nav-items {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  list-style: none;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  transition: all 0.3s;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #bfecff;
+  text-decoration: none;
+}
+
+.nav-item:hover {
+  background-color: rgba(241, 196, 15, 0.2);
+  color: #f1c40f;
+}
+
+.nav-item.active {
+  color: #f1c40f;
+  border-left: 4px solid #f1c40f;
+  background-color: rgba(241, 196, 15, 0.1);
+  padding-left: 0.5rem;
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  background-color: #0f2744;
+  border-top: 2px solid white;
+  flex-shrink: 0;
+}
+
+.footer-copyright {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #f1c40f;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.625rem;
+}
+
+.footer-links a {
+  color: #bfecff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #f1c40f;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 1rem 2rem;
+  overflow-y: auto;
+}
+
+/* Login Page */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #0c192c;
+  position: relative;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 28rem;
+  background-color: #1e3a5f;
+  border: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 10;
+}
+
+.login-header {
+  width: 100%;
+  border-bottom: 2px solid white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #0f2744;
+  text-align: center;
+}
+
+.login-header .material-symbols-outlined {
+  color: #f1c40f;
+  margin-bottom: 0.5rem;
+  font-size: 3rem;
+  font-variation-settings: 'FILL' 1;
+}
+
+.login-header h1 {
+  font-family: 'Courier Prime', monospace;
+  font-size: 1.5rem;
+  color: #f1c40f;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+}
+
+.login-header h2 {
+  font-family: 'Courier Prime', monospace;
+  font-size: 1.125rem;
+  color: white;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+  font-weight: bold;
+}
+
+.login-form {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #f1c40f;
+  text-transform: uppercase;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input-wrapper .material-symbols-outlined {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #bfecff;
+}
+
+.form-input {
+  width: 100%;
+  background-color: #0f2744;
+  border: 2px solid white;
+  color: white;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus {
+  border-color: #f1c40f;
+}
+
+.btn-primary {
+  width: 100%;
+  background-color: #f1c40f;
+  border: 2px solid #f1c40f;
+  color: black;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  font-weight: bold;
+  padding: 0.75rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: #f1c40f;
+}
+
+.login-footer {
+  padding: 1rem;
+  border-top: 2px solid white;
+  background-color: #0f2744;
+  text-align: center;
+}
+
+.login-footer a {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.625rem;
+  color: #f1c40f;
+  text-decoration: underline;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color 0.3s;
+}
+
+.login-footer a:hover {
+  color: #bfecff;
+}
+
+.grid-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.1;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Lobby Page */
+.page-header {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  border-bottom: 2px solid white;
+  padding-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .page-header {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
+
+.page-header h1 {
+  font-family: 'Courier Prime', monospace;
+  font-size: 1.875rem;
+  color: #f1c40f;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+}
+
+.page-header p {
+  font-family: 'Arimo', sans-serif;
+  font-size: 1rem;
+  color: #bfecff;
+  margin-top: 0.5rem;
+}
+
+.search-bar {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .search-bar {
+    width: auto;
+  }
+}
+
+.search-input {
+  padding: 0.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  flex: 1;
+  background-color: #0f2744;
+  border: 2px solid white;
+  color: white;
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .search-input {
+    width: 16rem;
+  }
+}
+
+.search-input:focus {
+  border-color: #f1c40f;
+}
+
+.btn-search {
+  border: 2px solid #f1c40f;
+  background-color: transparent;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-search:hover {
+  background-color: #f1c40f;
+  color: black;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.section-panel {
+  background-color: #1e3a5f;
+  border: 2px solid white;
+  padding: 1rem;
+}
+
+.section-header {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  color: #f1c40f;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid white;
+  padding-bottom: 0.5rem;
+}
+
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .pokemon-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.pokemon-btn {
+  padding: 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 2px solid #f1c40f;
+  background-color: transparent;
+  color: white;
+}
+
+.pokemon-btn:hover {
+  transform: translateY(-4px);
+  background-color: #f1c40f;
+  color: black;
+}
+
+.pokemon-btn.active {
+  background-color: #f1c40f;
+  color: black;
+}
+
+.team-header {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  color: #f1c40f;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.pokemon-card {
+  background-color: #1e3a5f;
+  border: 2px solid white;
+  display: flex;
+  flex-direction: column;
+}
+
+.pokemon-card.empty {
+  border-style: dashed;
+  opacity: 0.5;
+}
+
+.pokemon-card-header {
+  border-bottom: 2px solid white;
+  padding: 0.5rem;
+  background-color: #0f2744;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pokemon-card-header .slot {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #f1c40f;
+}
+
+.pokemon-card-header .level {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.625rem;
+  color: #bfecff;
+}
+
+.pokemon-card-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pokemon-image {
+  width: 100%;
+  height: 12rem;
+  border: 2px solid white;
+  background-color: #0c192c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.pokemon-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+.pokemon-name {
+  font-family: 'Courier Prime', monospace;
+  font-size: 1.125rem;
+  color: #f1c40f;
+  text-transform: uppercase;
+  border-bottom: 1px solid white;
+  padding-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.625rem;
+  width: 4rem;
+  text-transform: uppercase;
+  color: #bfecff;
+}
+
+.stat-bar-container {
+  border: 2px solid white;
+  height: 0.75rem;
+  width: 100%;
+  flex: 1;
+}
+
+.stat-bar-fill {
+  height: 100%;
+}
+
+.stat-bar-fill.atk {
+  background-color: #e74c3c;
+}
+
+.stat-bar-fill.def {
+  background-color: #3498db;
+}
+
+.stat-bar-fill.spd {
+  background-color: #f1c40f;
+}
+
+.empty-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 18.75rem;
+  padding: 1rem;
+}
+
+.empty-slot .material-symbols-outlined {
+  font-size: 3rem;
+  color: white;
+  opacity: 0.5;
+  margin-bottom: 1rem;
+}
+
+.empty-slot-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #bfecff;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.action-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+  border-top: 2px solid white;
+  padding-top: 1rem;
+}
+
+.btn-battle {
+  background-color: #f1c40f;
+  color: black;
+  border: 2px solid #f1c40f;
+  font-family: 'Courier Prime', monospace;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+}
+
+.btn-battle:hover:not(:disabled) {
+  background-color: transparent;
+  color: #f1c40f;
+}
+
+.btn-battle:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Battle Page */
+.battle-container {
+  max-width: 82.5rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .battle-container {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+.forces-panel {
+  grid-column: span 1;
+  background-color: #1e3a5f;
+  border: 2px solid white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .forces-panel {
+    grid-column: span 3;
+  }
+}
+
+.forces-header {
+  border-bottom: 2px solid white;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.forces-header.allied {
+  color: #bfecff;
+}
+
+.forces-header.hostile {
+  color: #ffb4ab;
+}
+
+.forces-body {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.battle-center {
+  grid-column: span 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .battle-center {
+    grid-column: span 6;
+  }
+}
+
+.arena {
+  flex: 1;
+  min-height: 18.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background-color: #0f2744;
+  border: 2px solid white;
+  position: relative;
+}
+
+.pokemon-battle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pokemon-battle.player {
+  margin-top: auto;
+}
+
+.pokemon-battle.enemy {
+  margin-bottom: auto;
+}
+
+.battle-pokemon-image {
+  width: 8rem;
+  height: 8rem;
+  border: 2px solid;
+  background-color: #0c192c;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.battle-pokemon-image.player {
+  border-color: #bfecff;
+}
+
+.battle-pokemon-image.enemy {
+  border-color: #ffb4ab;
+}
+
+.battle-pokemon-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.battle-pokemon-label {
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  background-color: #0c192c;
+  border: 2px solid white;
+  padding: 0.25rem 0.5rem;
+}
+
+.vs-text {
+  font-family: 'Courier Prime', monospace;
+  font-size: 1.875rem;
+  color: #f1c40f;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  letter-spacing: 0.1em;
+  font-weight: bold;
+}
+
+.combat-log {
+  background-color: #0c192c;
+  border: 2px solid #f1c40f;
+  height: 12rem;
+  padding: 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.log-entry {
+  margin-bottom: 0.5rem;
+}
+
+.log-entry.enemy {
+  color: rgba(191, 236, 255, 0.5);
+}
+
+.log-entry.player {
+  color: #bfecff;
+}
+
+.log-entry.damage {
+  color: #ffb4ab;
+}
+
+.log-entry.waiting {
+  color: white;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.battle-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.btn-back {
+  border: 2px solid #f1c40f;
+  background-color: transparent;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-back:hover {
+  background-color: #f1c40f;
+  color: black;
+}
+
+.pokemon-list-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid white;
+}
+
+.pokemon-list-item:last-child {
+  border-bottom: none;
+}
+
+.pokemon-list-item.enemy {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.pokemon-mini-image {
+  width: 3rem;
+  height: 3rem;
+  background-color: #0f2744;
+  border: 2px solid white;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pokemon-mini-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pokemon-mini-image.unknown .material-symbols-outlined {
+  font-size: 1.5rem;
+  color: white;
+  opacity: 0.3;
+}
+
+.pokemon-info {
+  flex: 1;
+}
+
+.pokemon-info-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.pokemon-info-name.unknown {
+  color: white;
+  opacity: 0.5;
+}
+
+.hp-bar {
+  border: 2px solid white;
+  height: 0.75rem;
+  width: 100%;
+}
+
+.hp-bar.unknown {
+  opacity: 0.5;
+}
+
+.hp-bar-fill {
+  height: 100%;
+}
+
+.hp-bar-fill.player {
+  background-color: #2ecc71;
+}
+
+.hp-bar-fill.enemy {
+  background-color: #e74c3c;
+  margin-left: auto;
+}
+
+.hp-bar-fill.unknown {
+  background-color: white;
+  opacity: 0.5;
+}
+
+.hp-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.625rem;
+  margin-top: 0.25rem;
+}
+
+.hp-text.unknown {
+  color: white;
+  opacity: 0.5;
+}
+
+.hp-text.player {
+  text-align: right;
+}
+
+.hp-text.enemy {
+  text-align: left;
+}
+
+/* History Page */
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid white;
+  padding-bottom: 1rem;
+}
+
+.history-header h2 {
+  font-family: 'Courier Prime', monospace;
+  font-size: 1.875rem;
+  color: #f1c40f;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+}
+
+.history-header p {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #bfecff;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+}
+
+.btn-back-lobby {
+  border: 2px solid #f1c40f;
+  color: #f1c40f;
+  background: transparent;
+  padding: 0.5rem 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.btn-back-lobby:hover {
+  background-color: #f1c40f;
+  color: black;
+}
+
+.history-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .history-grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+.history-section {
+  grid-column: span 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .history-section {
+    grid-column: span 6;
+  }
+}
+
+.section-title {
+  font-family: 'Courier Prime', monospace;
+  font-size: 1.125rem;
+  color: white;
+  text-transform: uppercase;
+  background-color: #0f2744;
+  padding: 0.5rem;
+  border: 2px solid white;
+  display: inline-block;
+  width: fit-content;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.table-container {
+  border: 2px solid white;
+  background-color: #0c192c;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  min-width: max-content;
+}
+
+thead tr {
+  border-bottom: 2px solid white;
+  background-color: #1e3a5f;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #bfecff;
+  text-transform: uppercase;
+}
+
+thead th {
+  padding: 0.75rem;
+  border-right: 1px solid white;
+}
+
+thead th:last-child {
+  border-right: none;
+}
+
+tbody {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+}
+
+tbody tr {
+  border-bottom: 1px solid white;
+  transition: background-color 0.3s;
+}
+
+tbody tr:hover {
+  background-color: #1e3a5f;
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(15, 39, 68, 0.5);
+}
+
+tbody tr.rank-1 {
+  background-color: #0f2744;
+}
+
+tbody tr.highlight {
+  color: #f1c40f;
+  font-weight: bold;
+}
+
+tbody td {
+  padding: 0.75rem;
+  border-right: 1px solid white;
+  color: white;
+}
+
+tbody td:last-child {
+  border-right: none;
+}
+
+tbody td.opponent {
+  color: #ffb4a9;
+}
+
+tbody td.rank {
+  color: #bfecff;
+  text-align: center;
+}
+
+tbody td.xp {
+  color: #bfecff;
+  text-align: right;
+}
+
+.result {
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.result.victory {
+  color: #bfecff;
+}
+
+.result.defeat {
+  color: #ffb4ab;
+}
+
+.you-badge {
+  color: #f1c40f;
+  font-size: 0.625rem;
+  margin-left: 0.5rem;
+}
+
+.star-icon {
+  color: #f1c40f;
+  font-size: 0.875rem;
+}
+
+/* Placeholder Page */
+.placeholder-container {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-box {
+  max-width: 42rem;
+  width: 100%;
+  background-color: #1e3a5f;
+  border: 2px solid white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.placeholder-box .material-symbols-outlined {
+  color: #f1c40f;
+  font-size: 6rem;
+  margin-bottom: 1rem;
+  font-variation-settings: 'FILL' 1;
+}
+
+.placeholder-box h1 {
+  font-family: 'Courier Prime', monospace;
+  font-size: 1.875rem;
+  color: #f1c40f;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.placeholder-box p {
+  font-family: 'Arimo', sans-serif;
+  font-size: 1rem;
+  color: #bfecff;
+  margin-bottom: 2rem;
+}
+
+.placeholder-box button {
+  border: 2px solid #f1c40f;
+  color: #f1c40f;
+  background: transparent;
+  padding: 0.75rem 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.placeholder-box button:hover {
+  background-color: #f1c40f;
+  color: black;
+}
