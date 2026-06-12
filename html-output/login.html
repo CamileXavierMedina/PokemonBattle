@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon Auto-Battler RPG - Login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="login-container">
+    <main class="login-box">
+      <header class="login-header">
+        <span class="material-symbols-outlined">videogame_asset</span>
+        <h1>POKÉMON</h1>
+        <h2>AUTO-BATTLER RPG</h2>
+      </header>
+
+      <form class="login-form" id="loginForm">
+        <div class="form-group">
+          <label for="username">Nome do Treinador</label>
+          <div class="input-wrapper">
+            <span class="material-symbols-outlined">person</span>
+            <input type="text" id="username" name="username" class="form-input" placeholder="DIGITE SEU NOME..." required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Senha</label>
+          <div class="input-wrapper">
+            <span class="material-symbols-outlined">key</span>
+            <input type="password" id="password" name="password" class="form-input" placeholder="********" required />
+          </div>
+        </div>
+
+        <div style="margin-top: 1rem;">
+          <button type="submit" class="btn-primary">
+            <span class="material-symbols-outlined">login</span>
+            Acessar Arena
+          </button>
+        </div>
+      </form>
+
+      <footer class="login-footer">
+        <a href="#">Criar novo perfil de Treinador</a>
+      </footer>
+    </main>
+
+    <div class="grid-overlay"></div>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (username && password) {
+        window.location.href = 'lobby.html';
+      }
+    });
+  </script>
+</body>
+</html>
