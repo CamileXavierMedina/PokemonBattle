@@ -18,7 +18,7 @@ const pokemonData = [
     atk: 75,
     def: 40,
     spd: 90,
-    image: pikachuImgBW
+    image: pikachuImgBW,
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ const pokemonData = [
     atk: 85,
     def: 60,
     spd: 80,
-    image: charizardImgBW
+    image: charizardImgBW,
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const pokemonData = [
     atk: 70,
     def: 80,
     spd: 65,
-    image: blastoiseImgBW
+    image: blastoiseImgBW,
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ const pokemonData = [
     atk: 72,
     def: 75,
     spd: 60,
-    image: rattataImgBW
+    image: rattataImgBW,
   },
 ];
 
@@ -62,7 +62,8 @@ export default function LobbyPage() {
     }
   };
 
-  const getActivePokemon = () => pokemonData.filter((p) => activeTeam.includes(p.id));
+  const getActivePokemon = () =>
+    pokemonData.filter((p) => activeTeam.includes(p.id));
 
   return (
     <div className="min-h-screen flex flex-col bg-[#0c192c] text-white">
@@ -88,7 +89,9 @@ export default function LobbyPage() {
                 className="p-2 font-['JetBrains_Mono'] text-xs flex-1 md:w-64 bg-[#0f2744] border-2 border-white text-white focus:border-[#f1c40f] focus:outline-none"
               />
               <button className="border-2 border-[#f1c40f] bg-transparent text-white px-4 py-2 font-['JetBrains_Mono'] text-xs uppercase transition-all hover:bg-[#f1c40f] hover:text-black flex items-center gap-2">
-                <span className="material-symbols-outlined text-lg">search</span>
+                <span className="material-symbols-outlined text-lg">
+                  search
+                </span>
                 PESQUISAR
               </button>
             </div>
@@ -117,15 +120,18 @@ export default function LobbyPage() {
 
           <section className="mb-8">
             <div className="font-['JetBrains_Mono'] text-sm text-[#f1c40f] mb-4 uppercase flex items-center gap-2">
-              <span className="material-symbols-outlined">groups</span> ACTIVE TEAM (
-              {activeTeam.length}/3)
+              <span className="material-symbols-outlined">groups</span> ACTIVE
+              TEAM ({activeTeam.length}/3)
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[0, 1, 2].map((index) => {
                 const pokemon = getActivePokemon()[index];
                 if (pokemon) {
                   return (
-                    <div key={index} className="bg-[#1e3a5f] border-2 border-white flex flex-col">
+                    <div
+                      key={index}
+                      className="bg-[#1e3a5f] border-2 border-white flex flex-col"
+                    >
                       <div className="border-b-2 border-white p-2 bg-[#0f2744] flex justify-between items-center">
                         <span className="font-['JetBrains_Mono'] text-xs text-[#f1c40f]">
                           &gt; SLOT_0{index + 1}
@@ -146,9 +152,21 @@ export default function LobbyPage() {
                           {pokemon.name}
                         </h3>
                         <div className="space-y-2">
-                          <StatBar label="Ataque" value={pokemon.atk} color="bg-[#e74c3c]" />
-                          <StatBar label="Defesa" value={pokemon.def} color="bg-[#3498db]" />
-                          <StatBar label="Veloc." value={pokemon.spd} color="bg-[#f1c40f]" />
+                          <StatBar
+                            label="Ataque"
+                            value={pokemon.atk}
+                            color="bg-[#e74c3c]"
+                          />
+                          <StatBar
+                            label="Defesa"
+                            value={pokemon.def}
+                            color="bg-[#3498db]"
+                          />
+                          <StatBar
+                            label="Veloc."
+                            value={pokemon.spd}
+                            color="bg-[#f1c40f]"
+                          />
                         </div>
                       </div>
                     </div>
@@ -202,7 +220,15 @@ export default function LobbyPage() {
   );
 }
 
-function StatBar({ label, value, color }: { label: string; value: number; color: string }) {
+function StatBar({
+  label,
+  value,
+  color,
+}: {
+  label: string;
+  value: number;
+  color: string;
+}) {
   return (
     <div className="flex items-center gap-2">
       <span className="font-['JetBrains_Mono'] text-[10px] w-16 uppercase text-[#bfecff]">
